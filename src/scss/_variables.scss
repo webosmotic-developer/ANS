@@ -1,0 +1,30 @@
+$primary: #00538d;
+$secondary: #0d95cc;
+$orange: #f47d29;
+$dark: #424242;
+$red: #fb0d1c;
+$white: #ffffff;
+$light-gray: #bbbbbb;
+$input-text-color: #515151;
+$placeholder-text: #ACACAE;
+$gray-100: 	#E8E8E8;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "orange": $orange,
+  "dark":$dark,
+  "red": $red,
+  "white":$white,
+  "light-gray":$light-gray,
+  "input-text-color": $input-text-color,
+  "placeholder-text": $placeholder-text,
+  "gray-100": $gray-100
+
+);
+
+@each $color, $value in $theme-colors {
+  .fill-#{$color} {
+    fill: $value
+  }
+}
