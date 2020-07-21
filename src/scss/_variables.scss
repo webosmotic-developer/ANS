@@ -9,6 +9,22 @@ $input-text-color: #515151;
 $placeholder-text: #ACACAE;
 $gray-100: 	#E8E8E8;
 
+/*bootstrap type variable override*/
+//  h1, h2, h3, h4, h5, h6,
+//  .h1, .h2, .h3, .h4, .h5, .h6 {
+//    margin-bottom: $headings-margin-bottom;
+//    font-family: $headings-font-family;
+//    font-weight: $headings-font-weight;
+//    line-height: $headings-line-height;
+//    color: $headings-color;
+//  }
+$headings-font-family: 'Oswald', sans-serif;
+$headings-font-weight: 700;
+
+/* body font override*/
+$font-family-sans-serif: 'Raleway', sans-serif;
+$font-weight-normal: 500;
+
 $theme-colors: (
   "primary": $primary,
   "secondary": $secondary,
