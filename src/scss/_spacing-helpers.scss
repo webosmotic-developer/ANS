@@ -1,0 +1,83 @@
+$spaceamounts: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 28, 30, 40, 50, 55, 75, 100); // Adjust this to include the pixel amounts you need.
+$sides: (top, bottom, left, right); // Leave this variable alone
+
+@each $space in $spaceamounts {
+    .c-m-#{$space} {
+        margin: #{$space}px !important;
+    }
+
+    .c-p-#{$space} {
+        padding: #{$space}px !important;
+    }
+
+    .c-my-#{$space} {
+        margin-top: #{$space}px !important;
+        margin-bottom: #{$space}px !important;
+    }
+    .c-mx-#{$space} {
+        margin-left: #{$space}px !important;
+        margin-right: #{$space}px !important;
+    }
+
+    .c-py-#{$space} {
+        padding-top: #{$space}px !important;
+        padding-bottom: #{$space}px !important;
+    }
+    .c-px-#{$space} {
+        padding-left: #{$space}px !important;
+        padding-right: #{$space}px !important;
+    }
+
+    @each $side in $sides {
+        .c-m#{str-slice($side, 0, 1)}-#{$space} {
+            margin-#{$side}: #{$space}px !important;
+        }
+
+        .c-p#{str-slice($side, 0, 1)}-#{$space} {
+            padding-#{$side}: #{$space}px !important;
+        }
+    }
+
+}
+
+$sizes: (
+    25: 25%,
+    35: 35%,
+    50: 50%,
+    60: 60%,
+    65: 65%,
+    70:70%,
+    75: 75%,
+    80: 80%,
+    100: 100%,
+    60px: 60px,
+    80px: 80px,
+    100px: 100px,
+    500px: 500px
+);
+
+@each $space in $spaceamounts {
+    .lh-#{$space} {
+        line-height: #{$space} !important;
+    }
+}
+
+@each $size, $length in $sizes {
+    .max-w-#{$size} {
+        max-width: $length !important;
+    }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+        @each $prop, $abbrev in (width: w, height: h) {
+            @each $size, $length in $sizes {
+                .#{$abbrev}#{$infix}-#{$size} {
+                    #{$prop}: $length !important;
+                }
+            }
+        }
+    }
+}
+

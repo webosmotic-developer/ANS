@@ -1,0 +1,16 @@
+@import '../../scss/variables';
+
+.nav-item.active {
+  font-weight: bold;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: $white;
+}
+
+.navbar-dark {
+  .navbar-toggler {
+    border-color: unset !important;
+    color: $white !important;
+  }
+}

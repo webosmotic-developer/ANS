@@ -7,6 +7,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormlyModule } from '@ngx-formly/core';
 import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
+import {AngularSvgIconModule} from 'angular-svg-icon';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
     AppRoutingModule,
     NgbModule,
     ReactiveFormsModule,
+    AngularSvgIconModule.forRoot(),
+    HttpClientModule,
     FormlyModule.forRoot(),
     FormlyBootstrapModule
   ],

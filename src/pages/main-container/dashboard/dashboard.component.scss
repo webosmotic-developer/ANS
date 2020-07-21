@@ -1,0 +1,27 @@
+:host {
+  flex-grow: 1;
+  display: flex;
+}
+.main-container {
+  overflow: auto;
+  height: calc(100vh - 235px);
+}
+
+
+.container-card {
+  -webkit-box-shadow: 0px 1px 2px 0px rgba(80, 80, 80, 0.5);
+  -moz-box-shadow: 0px 1px 2px 0px rgba(80, 80, 80, 0.5);
+  box-shadow: 0px 1px 2px 0px rgba(80, 80, 80, 0.5);
+
+  .header {
+    border-bottom: solid thin rgba(80, 80, 80, 0.5);
+  }
+
+  .body{
+    flex: 1 0 1px;
+  }
+
+  .footer {
+    border-top: solid thin rgba(80, 80, 80, 0.5);
+  }
+}
