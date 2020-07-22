@@ -1,4 +1,4 @@
-@import "src/scss/variables";
+@import "../../scss/variables";
 :host {
   flex-grow: 1;
   display: flex;
@@ -64,6 +64,7 @@
 
 .form-control{
   border-color: $secondary;
+  border-radius: unset;
   -webkit-box-shadow: 8px 8px 3px 0px rgba($secondary, 0.75);
   -moz-box-shadow: 8px 8px 3px 0px rgba($secondary, 0.75);
   box-shadow: 8px 8px 3px 0px rgba($secondary, 0.75);
