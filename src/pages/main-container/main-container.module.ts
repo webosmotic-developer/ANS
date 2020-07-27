@@ -5,6 +5,9 @@ import {RouterModule} from '@angular/router';
 import {NavbarComponent} from '../../shared/navbar/navbar.component';
 import {AngularSvgIconModule} from 'angular-svg-icon';
 import {AuthGuardService} from '../../services/custom/auth-guard-service/auth-guard.service';
+import {SidebarComponent} from '../../shared/sidebar/sidebar.component';
+import {MobileSidebarComponent} from '../../shared/mobile-sidebar/mobile-sidebar.component';
+import {SidenavService} from '../../services/custom/sidenav-service/sidenav.service';
 
 const routes = [
   {
@@ -20,14 +23,14 @@ const routes = [
 ];
 
 @NgModule({
-  declarations: [MainContainerComponent, NavbarComponent],
+  declarations: [MainContainerComponent, NavbarComponent, SidebarComponent, MobileSidebarComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     AngularSvgIconModule,
 
   ],
-  providers: [AuthGuardService]
+  providers: [AuthGuardService, SidenavService]
 })
 export class MainContainerModule {
 }

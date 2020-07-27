@@ -7,3 +7,11 @@
 .flex-grow {
   flex: 1;
 }
+
+@media(min-width: 769px) {
+  #main {
+    margin-left: 85px;
+    transition: margin-left 0.5s;
+
+  }
+}

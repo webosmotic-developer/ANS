@@ -1,0 +1,36 @@
+<div class="navbar-nav animate side-nav d-block flex-column d-lg-none" [ngClass]="isSideMenuOpen && 'open'">
+  <div class="d-flex">
+    <ul>
+      <li class="nav-item d-flex justify-content-end">
+        <a href="javascript:void(0);" class="btn-sm rounded-circle border-0 m-1 close-btn"
+           (click)="_sideNav.close()">
+          <i class="fa fa-fw fa-times text-white"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="d-flex flex-grow-1 flex-column">
+    <div class="d-flex flex-grow-1">
+      <ul class="nav w-100">
+        <!--<li class="nav-item w-100">
+          <div class="d-flex p-3" *ngIf="loggedInUser">
+            <div class="profile" id="profile">
+
+            </div>
+            <a class="nav-link" href="#">
+              <span class="text-white" *ngIf="loggedInUser">{{loggedInUser.name}}</span>
+            </a>
+          </div>
+        </li>-->
+        <li class="nav-item w-100" *ngFor="let item of menuItems;">
+          <a href="#" class="nav-link">
+            <svg-icon [src]="'assets/images/icons/'  + item.icon" class="fill-orange"
+                      [svgStyle]="{ 'height.px':20, 'width.px':20}"></svg-icon>
+            <span *ngIf="!isSidebarClose" class="text-white ml-3"> {{item.title}}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="mr-backdrop" [hidden]="!isSideMenuOpen" (click)="_sideNav.close()"></div>

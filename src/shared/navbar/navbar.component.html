@@ -1,13 +1,18 @@
-<div class="col-12 bg-primary p-0">
+<div class="col-12 bg-primary">
   <nav class="navbar navbar-dark py-2">
-    <div class="mr-auto">
-      <svg-icon src="assets/images/icons/download.svg" class="fill-white"
-                [svgStyle]="{ 'height.px':50, 'width.px':50}"></svg-icon>
+    <div class="mr-auto d-none d-lg-flex">
       <div class="navbar-brand">
         <img src="assets/images/ANS_logo.png" width="150px">
       </div>
     </div>
-    <div class="ml-5 ml-auto" id="navbarNav">
+    <div class="d-flex d-lg-none w-100">
+      <svg-icon src="assets/images/icons/download.svg" class="fill-white" (click)="onToggle()"
+                [svgStyle]="{ 'height.px':50, 'width.px':50}"></svg-icon>
+      <div class="navbar-brand d-flex justify-content-center w-100">
+        <img src="assets/images/ANS_logo.png" width="150px">
+      </div>
+    </div>
+    <div class="ml-5 ml-auto d-none d-lg-flex" id="navbarNav" >
       <ul class="navbar-nav d-flex flex-row">
         <li class="nav-item d-flex align-items-center mx-4">
           <a class="nav-link" href="#">
@@ -21,7 +26,7 @@
                       [svgStyle]="{ 'height.px':20, 'width.px':20}"></svg-icon>
           </a>
         </li>
-        <li class="nav-item d-flex align-items-center mx-4">
+        <li class="nav-item d-flex align-items-center ml-4">
           <a class="nav-link" href="javascript:void(0)" (click)="fnLogout()">
             <svg-icon src="assets/images/icons/sign-out.svg" class="fill-white"
                       [svgStyle]="{ 'height.px':20, 'width.px':20}"></svg-icon>
@@ -30,4 +35,5 @@
       </ul>
     </div>
   </nav>
+  <app-mobile-sidebar *ngIf="isSideMenuOpen"></app-mobile-sidebar>
 </div>

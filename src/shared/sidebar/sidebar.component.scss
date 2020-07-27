@@ -1,0 +1,21 @@
+@import "../../scss/variables";
+
+.sidebar {
+  height: 100%;
+  width: 85px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: $primary ;
+  transition: 0.5s;
+  overflow-x: hidden;
+  padding-top: 100px;
+  white-space: nowrap;
+}
+
+.nav-link {
+  display: flex;
+  padding: 1.5rem 1rem;
+  justify-content: center;
+}
