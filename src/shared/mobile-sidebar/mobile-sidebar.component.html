@@ -23,9 +23,9 @@
           </div>
         </li>-->
         <li class="nav-item w-100" *ngFor="let item of menuItems;">
-          <a href="#" class="nav-link">
-            <svg-icon [src]="'assets/images/icons/'  + item.icon" class="fill-orange"
-                      [svgStyle]="{ 'height.px':20, 'width.px':20}"></svg-icon>
+          <a href="#" class="nav-link d-flex">
+            <svg-icon [src]="'assets/images/icons/'  + item.icon" class="fill-orange d-flex align-items-center"
+                      [svgStyle]="{ 'height.px':24, 'width.px':24}"></svg-icon>
             <span *ngIf="!isSidebarClose" class="text-white ml-3"> {{item.title}}</span>
           </a>
         </li>

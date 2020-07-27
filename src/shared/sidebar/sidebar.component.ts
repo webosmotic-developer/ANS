@@ -19,7 +19,7 @@ export class SidebarComponent implements OnInit {
         icon: 'device.svg'
       },
       {
-        title: 'Tickets',
+        title: 'Ticket Management',
         icon: 'ticket.svg'
       },
       {
@@ -37,8 +37,8 @@ export class SidebarComponent implements OnInit {
 
   toggleSidebar() {
     if (this.isSidebarClose) {
-      document.getElementById('mySidebar').style.width = '200px';
-      document.getElementById('main').style.marginLeft = '200px';
+      document.getElementById('mySidebar').style.width = '250px';
+      document.getElementById('main').style.marginLeft = '250px';
       this.isSidebarClose = false;
     } else {
       document.getElementById('mySidebar').style.width = '85px';

@@ -29,7 +29,7 @@ export class MobileSidebarComponent implements OnInit {
         icon: 'device.svg'
       },
       {
-        title: 'Tickets',
+        title: 'Ticket Management',
         icon: 'ticket.svg'
       },
       {
