@@ -1,6 +1,6 @@
 
 <!--Desktop version-->
-<div class="w-100 h-100 d-none d-lg-flex">
+<div class="w-100 h-100 d-none d-lg-flex login-page">
   <div class="w-60 d-flex flex-column ans-background container">
     <div class="h-25 d-flex">
       <img class="logo align-self-end" src="../../assets/images/ANS_logo.png" height="100%"/>
@@ -45,8 +45,9 @@
       <form class="d-flex flex-column h-100" [formGroup]="form" *ngIf="isSecurityMode" (ngSubmit)="fnSignIn(model)">
         <div class="h-30 d-flex">
           <div class="align-self-end w-100">
-            <formly-form [form]="form" [fields]="fieldsArray" [model]="model"></formly-form>
-            <small class="mb-3 text-left" *ngIf="isSessionFailed">Invalid Credentials</small>
+            <label for="email" class="text-label raleway-bold text-primary mb-4">Password</label>
+            <formly-form [form]="form" [fields]="fieldsArray" [model]="model" ></formly-form>
+            <small class="mb-3 text-left text-danger" *ngIf="isSessionFailed">Invalid Credentials</small>
           </div>
         </div>
         <div class="h-25 d-flex pb-2">

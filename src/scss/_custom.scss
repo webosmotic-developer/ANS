@@ -48,3 +48,24 @@ html, body {
   height: 60% !important;
 }
 
+.login-page{
+  .form-control{
+    border-color: $secondary;
+    border-radius: unset;
+    -webkit-box-shadow: 8px 8px 3px 0px rgba($secondary, 0.75);
+    -moz-box-shadow: 8px 8px 3px 0px rgba($secondary, 0.75);
+    box-shadow: 8px 8px 3px 0px rgba($secondary, 0.75);
+  }
+
+  .form-background {
+    background-color: $white;
+  }
+
+  .form-group{
+    margin: 0;
+
+    .lable{
+
+    }
+  }
+}
