@@ -1,4 +1,5 @@
 @import "../../scss/variables";
+
 :host {
   flex-grow: 1;
   display: flex;
@@ -10,24 +11,23 @@
   background-size: cover;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent),
   url('../../assets/images/ANS_Background_Image.jpg');
-  background-size: cover;
   color: $white;
 
 
-  .h1{
+  .h1 {
     font-size: 4rem;
   }
 }
 
-.h2{
+.h2 {
   font-size: 3rem;
 }
 
-.container{
-  padding: 60px;
+.container {
+  padding: 60px 40px;
 }
 
-.link-button{
+.link-button {
   color: $primary;
   border-radius: 0;
   text-transform: none;
@@ -38,24 +38,24 @@
   font-weight: 800;
   text-align: center;
   text-decoration: none;
-  font-family: 'Raleway',sans-serif;
+  font-family: 'Raleway', sans-serif;
   margin: 0;
 
-  &:hover{
+  &:hover {
     background: $orange;
-    color:$white;
+    color: $white;
   }
 }
 
-.btn.link-button{
-  max-width: 200px;
+.btn.link-button {
+  max-width: 192px;
 }
 
-.form-background {
+.form-container {
   background-color: $white;
 }
 
-.text-label{
+.text-label {
   font-size: 20px;
 }
 
@@ -66,8 +66,88 @@
   display: inline-block;
 }
 
+.login-text {
+  height: 33.33%;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.form-box {
+  height: calc(100% - 33.33%);
+}
+
+.btn-container {
+  margin-bottom: 0.5rem;
+}
+
+.width-75 {
+  width: 75%;
+}
+
+@media(max-width: 1024px) {
+  .logo {
+    max-width: 100%;
+  }
+  .container {
+    padding: 30px;
+  }
+
+  .w-40.container {
+    width: 45% !important;
+  }
+  .w-60.container {
+    width: 55% !important;
+  }
+  .width-md-100 {
+    width: 100%;
+  }
+  .ans-background {
+    .h1 {
+      font-size: 3.5rem;
+    }
+  }
+}
+
 @media(max-width: 768px) {
+  .logo {
+    max-width: 100%;
+  }
+
+  .link-button {
+    padding: 8px 13px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
   .link-box {
-    padding: 13px 50px;
+    padding: 10px 50px;
+  }
+
+  .login-text {
+    margin-top: 2em;
+  }
+
+  .btn-container {
+    margin-bottom: 3.5rem;
+  }
+}
+
+@media(max-width: 375px) {
+  .login-text {
+    margin-top: 1.5em;
+  }
+
+  .btn-container {
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media(max-width: 320px) {
+  .login-text {
+    margin-top: 0.5rem;
+  }
+
+  .btn-container {
+    margin-bottom: 0.5rem;
   }
 }
