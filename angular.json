@@ -24,6 +24,11 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
+              {
+                "glob": "**/*",
+                "input": "./node_modules/leaflet/dist/images",
+                "output": "leaflet/"
+              },
               "src/favicon.ico",
               "src/assets"
             ],
@@ -31,7 +36,10 @@
               "node_modules/font-awesome/css/font-awesome.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/leaflet/dist/leaflet.js",
+              "node_modules/leaflet.markercluster/dist/leaflet.markercluster.js"
+            ]
           },
           "configurations": {
             "production": {

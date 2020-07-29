@@ -15,6 +15,7 @@ import {StartupService} from '../services/custom/startup-service/startup.service
 import {UniversalStorageService} from '../services/custom/universal-storage-service/universal-storage.service';
 import {AuthGuardService} from '../services/custom/auth-guard-service/auth-guard.service';
 import {NotAuthGuardService} from '../services/custom/not-auth-guard-service/not-auth-guard.service';
+import {LeafletModule} from '@asymmetrik/ngx-leaflet';
 
 
 export function init(startup: StartupService): Function {
@@ -31,9 +32,10 @@ export function init(startup: StartupService): Function {
     NgbModule,
     ReactiveFormsModule,
     AngularSvgIconModule.forRoot(),
+    LeafletModule,
     HttpClientModule,
     FormlyModule.forRoot(),
-    FormlyBootstrapModule
+    FormlyBootstrapModule,
   ],
   providers: [
     CookieService,

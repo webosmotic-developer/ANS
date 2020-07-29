@@ -1,0 +1,79 @@
+@import "../scss/_variables.scss";
+
+div.leaflet-container {
+    width: 100%;
+    height: 100%;
+}
+
+/* customize look of leaflet zoom controls */
+
+.leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
+    border: none;
+}
+
+.leaflet-bar{
+    box-shadow: none;
+}
+
+.leaflet-touch .leaflet-bar a:first-child {
+    margin-left: 10px;
+}
+
+.leaflet-control-zoom-in, .leaflet-control-zoom-out{
+    float: right;
+}
+
+//Modifying popup marker
+.leaflet-popup-tip , .leaflet-popup-content-wrapper {
+    background-color: $gray-100;
+}
+
+.leaflet-popup-content-wrapper {
+    width: 300px;
+    padding: 0px;
+}
+
+.leaflet-popup-content {
+    margin: 0px;
+}
+@keyframes blink {
+    from, to { fill-opacity: 1; }
+    50% { fill-opacity: 0.5 }
+}
+
+.blinking {
+    animation: blink 2s ease-in infinite;
+}
+
+@keyframes pulse {
+    to {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+.markerAnimation::before,
+.markerAnimation::after {
+    animation: pulse 2s linear infinite;
+    border: #ff0008 solid 8px;
+    border-radius: 9999px;
+    box-sizing: border-box;
+    content: " ";
+    height: 200%;
+    left: -107%;
+    opacity: 0.6;
+    position: absolute;
+    top: -46%;
+    -webkit-transform: scale(0.714);
+    transform: scale(0.714);
+    width: 310%;
+    z-index: 1
+}
+
+.markerAnimation::after {
+    animation-delay: 1s;
+}
+
+.leaflet-div-icon{
+    background: transparent;
+    border: 0px;
+}
