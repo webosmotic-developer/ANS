@@ -18,6 +18,11 @@ const routes = [
         loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),
         canActivate: [AuthGuardService]
       },
+      {
+        path: 'devices',
+        loadChildren: () => import('./devices/devices.module').then(m => m.DevicesModule),
+        canActivate: [AuthGuardService]
+      },
     ]
   }
 ];

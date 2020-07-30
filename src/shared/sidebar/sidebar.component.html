@@ -1,10 +1,10 @@
 <div id="mySidebar" class="sidebar" (mouseenter)="toggleSidebar()" (mouseleave)="toggleSidebar()">
   <ul class="nav w-100">
     <li class="nav-item w-100" *ngFor="let item of menuItems;">
-      <a href="#" class="nav-link d-flex">
-          <svg-icon [src]="'assets/images/icons/'  + item.icon" class="fill-orange d-flex align-items-baseline"
-                    [svgStyle]="{ 'height.px':20, 'width.px':20}"></svg-icon>
-        <span *ngIf="!isSidebarClose" class="ml-3 text-white  "> {{item.title}}</span>
+      <a routerLink="{{item.path}}" routerLinkActive="active" class="nav-link d-flex" [routerLinkActiveOptions]="{ exact: true }">
+        <svg-icon [src]="'assets/images/icons/'  + item.icon" class="fill-orange d-flex align-items-baseline"
+                  [svgStyle]="{ 'height.px':24, 'width.px':24}"></svg-icon>
+        <span *ngIf="!isSidebarClose" class="ml-3 text-white"> {{item.title}}</span>
       </a>
     </li>
   </ul>

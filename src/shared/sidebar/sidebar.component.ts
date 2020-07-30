@@ -16,19 +16,23 @@ export class SidebarComponent implements OnInit {
     this.menuItems = [
       {
         title: 'Devices',
-        icon: 'device.svg'
+        icon: 'device.svg',
+        path: '/devices'
       },
       {
         title: 'Ticket Management',
-        icon: 'ticket.svg'
+        icon: 'ticket.svg',
+        path: ''
       },
       {
         title: 'Alarms',
-        icon: 'alarms.svg'
+        icon: 'alarms.svg',
+        path: ''
       },
       {
         title: 'Reports',
-        icon: 'chart.svg'
+        icon: 'chart.svg',
+        path: ''
       },
 
     ]

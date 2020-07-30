@@ -1,11 +1,5 @@
-<div class="h-100 container-fluid d-flex flex-column">
-  <div class="row flex-grow d-flex flex-row">
-   <app-sidebar class="d-none d-lg-flex"></app-sidebar>
-    <div id="main" class="w-100 h-100">
-      <div class="row m-0">
-        <app-navbar class="w-100"></app-navbar>
-      </div>
-      <router-outlet></router-outlet>
-    </div>
-  </div>
+<header><app-navbar class="w-100"></app-navbar></header>
+<div id="main">
+  <app-sidebar class="d-none d-lg-flex"></app-sidebar>
+  <router-outlet></router-outlet>
 </div>

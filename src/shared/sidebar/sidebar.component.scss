@@ -7,13 +7,24 @@
   z-index: 1;
   top: 0;
   left: 0;
-  background: $primary ;
+  //background: $primary ;
+  background-image: linear-gradient($primary, $white);
   transition: 0.5s;
   overflow-x: hidden;
-  padding-top: 100px;
+  padding-top: 85px;
   white-space: nowrap;
 }
 
 .nav-link {
   padding: 1.5rem;
+  &:hover{
+    background: rgba($secondary, 0.3);
+  }
+}
+
+.active{
+  background: rgba($secondary, 0.6);
+  &:hover{
+    background: rgba($secondary, 0.6);
+  }
 }
