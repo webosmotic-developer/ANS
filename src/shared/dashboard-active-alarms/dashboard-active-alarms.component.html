@@ -1,0 +1,41 @@
+<ngb-accordion #a="ngbAccordion" class="custom-acc" activeIds="active-alarms">
+  <ngb-panel id="active-alarms">
+    <ng-template ngbPanelHeader let-opened="opened">
+      <div class="d-flex align-items-center justify-content-center">
+        <h5 class="m-0 text-white">Top 10 0f 50 Active Alarms</h5>
+        <!--  <button ngbPanelToggle class="btn btn-link p-0">Toggle first</button>-->
+      </div>
+    </ng-template>
+    <ng-template ngbPanelContent>
+      <table class="table table-striped w-100 h-100">
+        <thead>
+        <tr>
+          <th >Health</th>
+          <th >Alarm name</th>
+          <th >Value</th>
+          <th >Device Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <ng-container *ngIf="!isAlarmsLoading">
+          <tr *ngFor="let alarm of alarms; index as i">
+            <td>
+           <span class="badge ellipsis-badge font-weight-normal p-2 mr-3 text-white"
+                 [ngStyle]="{'background-color': alarm.healthColor}">
+             {{alarm.health}}</span>
+            </td>
+            <td>{{alarm.attributeName}}</td>
+            <td>high</td>
+            <td>{{alarm.deviceName}}</td>
+          </tr>
+        </ng-container>
+        <ng-container *ngIf="isAlarmsLoading" class="w-100 h-100">
+          <div class="w-100 h-100 d-flex justify-content-center align-items-center" *ngIf="isAlarmsLoading">
+            <app-loader *ngIf="isAlarmsLoading"></app-loader>
+          </div>
+        </ng-container>
+        </tbody>
+      </table>
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>

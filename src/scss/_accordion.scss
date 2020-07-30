@@ -1,0 +1,22 @@
+@import '../scss/variables';
+.custom-acc {
+  .card, .card-header {
+    background: $primary;
+    border: none;
+    -webkit-border-radius: unset;
+    -moz-border-radius: unset;
+    border-radius: unset;
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+  }
+
+  .card-header {
+    padding: 1rem 1.25rem;
+  }
+
+  .card-body {
+    padding-top: 1rem;
+    background: $white;
+  }
+
+}

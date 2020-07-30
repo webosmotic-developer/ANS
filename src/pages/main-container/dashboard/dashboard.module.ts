@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import {DashboardComponent} from './dashboard.component';
 import {RouterModule} from '@angular/router';
 import {CustomMapModule} from '../../../shared/custom-map/custom-map.module';
+import {DashboardActiveAlarmsModule} from '../../../shared/dashboard-active-alarms/dashboard-active-alarms.module';
+
+
 
 const routes = [
   {path: '', component: DashboardComponent}
@@ -14,7 +17,8 @@ const routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    CustomMapModule
+    CustomMapModule,
+    DashboardActiveAlarmsModule
   ],
   exports: [DashboardComponent]
 })

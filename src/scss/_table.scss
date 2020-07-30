@@ -1,0 +1,18 @@
+@import '../scss/variables';
+.table th, .table td {
+  border: none !important;
+  color: $primary;
+}
+
+.table thead {
+  font-family: $headings-font-family;
+}
+
+.table tbody {
+  font-family: $font-family-sans-serif;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>tr:nth-child(odd)>th {
+  background-color: $light-secondary; // Choose your own color here
+}
