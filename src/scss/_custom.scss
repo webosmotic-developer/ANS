@@ -4,17 +4,17 @@ html, body {
   height: 100% !important;
 }
 
-.raleway-extra-bold{
+.raleway-extra-bold {
   font-family: $font-family-sans-serif;
   font-weight: 800;
 }
 
-.raleway-bold{
+.raleway-bold {
   font-family: $font-family-sans-serif;
   font-weight: 700 !important;
 }
 
-.raleway-semi-bold{
+.raleway-semi-bold {
   font-family: $font-family-sans-serif;
   font-weight: 600;
 }
@@ -27,37 +27,37 @@ html, body {
   width: 40% !important;
 }
 
-.h-15{
+.h-15 {
   height: 15% !important;
 }
 
-.h-20{
+.h-20 {
   height: 20% !important;
 }
 
-.h-30{
+.h-30 {
   height: 30% !important;
 }
 
-.h-35{
+.h-35 {
   height: 35% !important;
 }
 
 
-.h-60{
+.h-60 {
   height: 60% !important;
 }
 
-.text-orange{
+.text-orange {
   color: $orange;
 }
 
-.pointer-none{
+.pointer-none {
   pointer-events: none;
 }
 
-.login-page{
-  .form-control{
+.login-page {
+  .form-control {
     border-color: $secondary;
     border-radius: unset;
     -webkit-box-shadow: 8px 8px 3px 0px rgba($secondary, 0.75);
@@ -65,7 +65,86 @@ html, body {
     box-shadow: 8px 8px 3px 0px rgba($secondary, 0.75);
   }
 
-  .form-group{
+  .form-group {
     margin: 0;
   }
+}
+
+.flex-table {
+  .row {
+    margin: 15px 0;
+    align-items: center;
+  }
+
+  .col {
+    padding: 0 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .flex-table-thead {
+    margin: 0px 0 0 0;
+    padding: 10px 0;
+    border: solid thin black;
+
+    .col {
+      border-right: 1px solid $secondary;
+      text-align: center;
+      align-self: stretch;
+
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+
+  .flex-table-tbody {
+    margin-top: 15px;
+
+    .row {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border: solid thin $primary;
+      background: $white;
+    }
+
+    .row:last-child {
+      margin-bottom: 0;
+    }
+
+    .row:first-child {
+      margin-top: 0;
+    }
+
+  }
+}
+
+.flex-striped-table {
+  .flex-table-thead{
+    background: $light-secondary;
+
+  }
+  .flex-table-tbody > .row:nth-child(even) {
+    background-color: $light-secondary; // Choose your own color here
+  }
+}
+
+
+//custom_scroll scrollbar styling
+.custom-scroll::-webkit-scrollbar-track {
+  background-color: $white;
+  padding: 0 5px;
+  border: thin solid $primary;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 12px;
+  //opacity: 0.5;
+  background-color: #000;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  opacity: 0.5;
+  background-color: $orange;
+  border: thin solid $primary;
 }

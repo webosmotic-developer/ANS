@@ -10,28 +10,50 @@
       <div class="w-100 h-100 d-flex justify-content-center align-items-center" *ngIf="isAlarmsLoading">
         <app-loader *ngIf="isAlarmsLoading"></app-loader>
       </div>
-      <table class="table table-striped w-100 h-100" *ngIf="!isAlarmsLoading">
-        <thead>
-        <tr>
-          <th >Health</th>
-          <th >Alarm name</th>
-          <th >Value</th>
-          <th >Device Name</th>
-        </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let alarm of data; index as i">
-            <td>
-           <span class="badge ellipsis-badge font-weight-normal p-2 mr-3 text-white"
-                 [ngStyle]="{'background-color': alarm.healthColor}">
-             {{alarm.health}}</span>
-            </td>
-            <td>{{alarm.attributeName}}</td>
-            <td>high</td>
-            <td>{{alarm.deviceName}}</td>
-          </tr>
-        </tbody>
-      </table>
+      <!--      <table class="table table-striped w-100 h-100" *ngIf="!isAlarmsLoading">-->
+      <!--        <thead>-->
+      <!--        <tr>-->
+      <!--          <th >Health</th>-->
+      <!--          <th >Alarm name</th>-->
+      <!--          <th >Value</th>-->
+      <!--          <th >Device Name</th>-->
+      <!--        </tr>-->
+      <!--        </thead>-->
+      <!--        <tbody>-->
+      <!--          <tr *ngFor="let alarm of data; index as i">-->
+      <!--            <td>-->
+      <!--           <span class="badge ellipsis-badge font-weight-normal p-2 mr-3 text-white"-->
+      <!--                 [ngStyle]="{'background-color': alarm.healthColor}">-->
+      <!--             {{alarm.health}}</span>-->
+      <!--            </td>-->
+      <!--            <td>{{alarm.attributeName}}</td>-->
+      <!--            <td>high</td>-->
+      <!--            <td>{{alarm.deviceName}}</td>-->
+      <!--          </tr>-->
+      <!--        </tbody>-->
+      <!--      </table>-->
+
+      <div class="flex-table flex-striped-table d-flex flex-column overflow-hidden" *ngIf="!isAlarmsLoading">
+        <div class="flex-table-thead text-primary h6 border-0">
+          <div class="row">
+            <div class="col">Health</div>
+            <div class="col">Alarm Name</div>
+            <div class="col">Value</div>
+            <div class="col">Device Name</div>
+          </div>
+        </div>
+        <div class="flex-table-tbody custom-scroll h-100 overflow-auto mt-0">
+          <div class="row shadow-sm m-0 border-0" *ngFor="let alarm of data; index as i">
+            <div class="col text-center">
+              <span class="badge ellipsis-badge font-weight-normal rounded-0 p-2 mr-3 text-white"
+                    [ngStyle]="{'background-color': alarm.healthColor}">{{alarm.health}}</span>
+            </div>
+            <div class="col flex-column text-center text-primary">{{alarm.attributeName}}</div>
+            <div class="col text-center text-primary">high</div>
+            <div class="col text-center text-primary">{{alarm.deviceName}}</div>
+          </div>
+        </div>
+      </div>
     </ng-template>
   </ngb-panel>
 </ngb-accordion>
