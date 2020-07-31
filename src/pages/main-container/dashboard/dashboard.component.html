@@ -3,7 +3,16 @@
       <app-custom-map></app-custom-map>
   </div>
   <div class="container-card w-100 mb-15">
-    <app-dashboard-active-alarms></app-dashboard-active-alarms>
+    <app-dashboard-active-alarms [data]="alarms" [isAlarmsLoading]="isAlarmsLoading"></app-dashboard-active-alarms>
   </div>
+  <!--<div class="d-flex w-100 flex-row mb-15">
+    <div class="w-50 container-card mr-15">
+
+    </div>
+    <div class="w-50 container-card">
+    </div>
+  </div>
+  <div class="container-card">
+  </div>-->
 </div>
 

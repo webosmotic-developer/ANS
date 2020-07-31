@@ -1,6 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-import {AlarmsService} from '../../services/node/alarms/alarms.service';
-import * as _ from 'lodash'
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-dashboard-active-alarms',
@@ -8,21 +6,14 @@ import * as _ from 'lodash'
   styleUrls: ['./dashboard-active-alarms.component.scss']
 })
 export class DashboardActiveAlarmsComponent implements OnInit {
-  public isAlarmsLoading = false;
-  public alarms: any;
+  @Input() data: any;
+  @Input() isAlarmsLoading: boolean;
 
-  constructor(private _alarms: AlarmsService) {
+  constructor() {
   }
 
   ngOnInit(): void {
-    this.isAlarmsLoading = true
-    this._alarms.getAlarms().subscribe((response: any) => {
-      if (response && response.alarms)
-        this.isAlarmsLoading = false;
-        this.alarms = response.alarms;
-    }, err =>  {
-      this.isAlarmsLoading = false;
-    });
+    console.log("isAlarmsLoading", this.isAlarmsLoading)
   }
 
 }
