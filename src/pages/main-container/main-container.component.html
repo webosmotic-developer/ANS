@@ -1,7 +1,8 @@
+<link rel="stylesheet" href="main-container.component.scss">
 <header class="shadow-sm"><app-navbar class="w-100"></app-navbar></header>
-<div id="main" class="d-flex flex-column h-100">
+<div id="main" class="d-flex flex-column">
   <app-sidebar class="d-none d-lg-flex"></app-sidebar>
-  <div class="main-container d-flex">
+  <div class="main-container d-flex h-100">
     <router-outlet></router-outlet>
   </div>
 </div>
