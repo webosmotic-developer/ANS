@@ -48,6 +48,14 @@ html, body {
   height: 60% !important;
 }
 
+.text-orange{
+  color: $orange;
+}
+
+.pointer-none{
+  pointer-events: none;
+}
+
 .login-page{
   .form-control{
     border-color: $secondary;

@@ -1,5 +1,10 @@
-<header><app-navbar class="w-100"></app-navbar></header>
-<div id="main">
+<header class="shadow-sm"><app-navbar class="w-100"></app-navbar></header>
+<div id="main" class="d-flex flex-column h-100">
   <app-sidebar class="d-none d-lg-flex"></app-sidebar>
-  <router-outlet></router-outlet>
+  <div class="main-container d-flex">
+    <router-outlet></router-outlet>
+  </div>
 </div>
+<footer class="d-flex justify-content-center bg-primary p-1">
+  <a class="link-button link-box align-self-center" target="_blank" href="https://www.anscorporate.com/">anscorporate.com</a>
+</footer>

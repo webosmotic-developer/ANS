@@ -1,3 +1,105 @@
-.content-container{
+@import "../../../scss/variables";
 
+:host {
+  flex-grow: 1;
+  display: flex;
 }
+
+.has-search {
+  .form-control {
+    padding-left: 2.375rem;
+  }
+
+  .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+  }
+
+  ::placeholder {
+    color: $primary;
+    opacity: 1; /* Firefox */
+  }
+
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: $primary;
+  }
+
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: $primary;
+  }
+}
+
+.flex-table {
+  .row {
+    margin: 15px 0;
+    align-items: center;
+  }
+
+  .col {
+    padding: 0 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .flex-table-thead {
+    margin: 15px 0;
+    padding: 10px 0;
+    border: solid thin black;
+
+    .col {
+      border-right: 1px solid $secondary;
+      text-align: center;
+      align-self: stretch;
+
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+
+  .flex-table-tbody {
+    .row {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border: solid thin $primary;
+      background: $white;
+    }
+
+    &.scroll {
+      max-height: 100px;
+      overflow-x: scroll;
+    }
+  }
+}
+.bg-image{
+  display: block;
+  position: relative;
+  z-index: 1;
+
+  &:after{
+    content: "";
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    background-image: url('../../../assets/images/ANS_Background_Image.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+  }
+}
+

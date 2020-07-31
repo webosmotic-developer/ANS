@@ -15,6 +15,11 @@ export class SidebarComponent implements OnInit {
   ngOnInit() {
     this.menuItems = [
       {
+        title: 'Dashboard',
+        icon: 'dashboard.svg',
+        path: '/dashboard'
+      },
+      {
         title: 'Devices',
         icon: 'device.svg',
         path: '/devices'
@@ -45,8 +50,8 @@ export class SidebarComponent implements OnInit {
       document.getElementById('main').style.marginLeft = '250px';
       this.isSidebarClose = false;
     } else {
-      document.getElementById('mySidebar').style.width = '85px';
-      document.getElementById('main').style.marginLeft = '85px';
+      document.getElementById('mySidebar').style.width = '72px';
+      document.getElementById('main').style.marginLeft = '72px';
       this.isSidebarClose = true;
     }
   }

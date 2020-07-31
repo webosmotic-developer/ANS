@@ -2,7 +2,7 @@
 
 .sidebar {
   height: 100%;
-  width: 85px;
+  width: 72px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -11,20 +11,21 @@
   background-image: linear-gradient($primary, $white);
   transition: 0.5s;
   overflow-x: hidden;
-  padding-top: 85px;
+  padding-top: 76px;
   white-space: nowrap;
 }
 
 .nav-link {
   padding: 1.5rem;
+  text-shadow: 1px 1px 1px $primary;
   &:hover{
-    background: rgba($secondary, 0.3);
+    background: rgba($secondary, 0.4);
   }
 }
 
 .active{
-  background: rgba($secondary, 0.6);
+  background: rgba($secondary, 1);
   &:hover{
-    background: rgba($secondary, 0.6);
+    background: rgba($secondary, 1);
   }
 }
