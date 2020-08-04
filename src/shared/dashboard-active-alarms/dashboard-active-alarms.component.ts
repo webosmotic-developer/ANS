@@ -13,7 +13,6 @@ export class DashboardActiveAlarmsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log("isAlarmsLoading", this.isAlarmsLoading)
   }
 
 }

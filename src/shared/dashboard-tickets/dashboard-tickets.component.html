@@ -1,0 +1,53 @@
+<ngb-accordion #a="ngbAccordion" class="custom-acc h-100" activeIds="active-tickets">
+  <ngb-panel id="active-tickets" class="custom-panel">
+    <ng-template ngbPanelHeader let-opened="opened">
+      <div class="d-flex align-items-center justify-content-center">
+        <h5 class="m-0 text-white">Top 10 0f 50 Tickets</h5>
+        <!--  <button ngbPanelToggle class="btn btn-link p-0">Toggle first</button>-->
+      </div>
+    </ng-template>
+    <ng-template ngbPanelContent class="custom-panel">
+      <div class="w-100 h-100 d-flex justify-content-center align-items-center" *ngIf="isTicketsLoading">
+        <app-loader *ngIf="isTicketsLoading"></app-loader>
+      </div>
+      <div class="flex-table flex-striped-table d-flex flex-column overflow-hidden" *ngIf="!isTicketsLoading">
+        <div class="flex-table-thead text-primary h6 border-0">
+          <div class="row">
+            <div class="col">Title</div>
+            <div class="col">Assignee</div>
+            <div class="col">Last Updated</div>
+          </div>
+        </div>
+        <div class="flex-table-tbody custom-scroll h-100 overflow-auto mt-0">
+          <div class="row shadow-sm m-0 border-0" *ngFor="let ticket of tickets; index as i">
+            <div class="col d-flex flex-column text-primary">
+              {{ticket.title}}
+              <div *ngIf="ticket.labels && ticket.labels.length">
+                 <span class="btn btn-sm mr-2 mb-2 ellipsis-button"
+                       *ngFor="let label of ticket.labels"
+                       [ngStyle]="fnGetIssuesLabelColor(label)">
+                   <span>{{label.title}}</span>
+                 </span>
+              </div>
+            </div>
+            <div class="col flex-column text-center text-primary">
+              <img alt="member" class="rounded-circle" *ngIf="ticket.assignee"
+                     height="40"
+                     width="40"
+                     [src]="fnReturnAssigneeImg(ticket)"/>
+              <span *ngIf="!ticket.assignee">No assignee</span></div>
+            <div class="col text-primary d-flex flex-column text-center">
+              <div class="d-flex justify-content-center">
+                <i class="fa fa-fw fa-comment mr-2"></i>
+                <span>{{ticket.commentIds && ticket.commentIds.length ? ticket.commentIds.length : '0'}}</span>
+              </div>
+              <div>
+                <span>updated {{ticket.updatedDate}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>

@@ -1,0 +1,16 @@
+<ngb-accordion #a="ngbAccordion" class="custom-acc h-100 w-100" activeIds="alarms-pie">
+  <ngb-panel id="alarms-pie" class="custom-panel">
+    <ng-template ngbPanelHeader let-opened="opened">
+      <div class="d-flex align-items-center justify-content-center">
+        <h5 class="m-0 text-white">Alarms</h5>
+        <!--  <button ngbPanelToggle class="btn btn-link p-0">Toggle first</button>-->
+      </div>
+    </ng-template>
+    <ng-template ngbPanelContent class="custom-panel">
+      <div class="w-100 h-100 d-flex justify-content-center align-items-center" *ngIf="isAlarmsLoading">
+        <app-loader *ngIf="isAlarmsLoading"></app-loader>
+      </div>
+      <div #pieChart class="h-100 w-100"></div>
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>

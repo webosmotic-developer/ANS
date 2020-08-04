@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_URL: 'https://api.predictivetech.io/'
+  API_URL: 'https://dev-api.predictivetech.io/'
 };
 
 /*

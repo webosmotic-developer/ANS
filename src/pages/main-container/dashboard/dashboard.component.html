@@ -5,14 +5,22 @@
   <div class="container-card w-100 mb-15">
     <app-dashboard-active-alarms [data]="alarms" [isAlarmsLoading]="isAlarmsLoading"></app-dashboard-active-alarms>
   </div>
-  <!--<div class="d-flex w-100 flex-row mb-15">
-    <div class="w-50 container-card mr-15">
-
+  <div class="d-none d-lg-flex w-100 h-100 flex-row mb-15">
+    <div class="w-50 h-100 container-card mr-15">
+      <app-alarms-pie-chart [data]="alarmsPieChartData" [isAlarmsLoading]="isAlarmsLoading"></app-alarms-pie-chart>
     </div>
-    <div class="w-50 container-card">
+    <div class="w-50 h-100 container-card">
+      <app-health-pie-chart [data]="devicePieChartData" [isDevicesLoading]="isDevicesLoading"></app-health-pie-chart>
     </div>
   </div>
-  <div class="container-card">
-  </div>-->
+  <div class="container-card w-100 m-15 d-lg-none d-flex justify-content-center align-items-center">
+    <app-alarms-pie-chart [data]="alarmsPieChartData" [isAlarmsLoading]="isAlarmsLoading"></app-alarms-pie-chart>
+  </div>
+  <div class="container-card w-100 m-15 d-lg-none d-flex justify-content-center align-items-center" >
+    <app-health-pie-chart [data]="devicePieChartData" [isDevicesLoading]="isDevicesLoading"></app-health-pie-chart>
+  </div>
+  <div class="container-card w-100 mb-15">
+    <app-dashboard-tickets></app-dashboard-tickets>
+  </div>
 </div>
 

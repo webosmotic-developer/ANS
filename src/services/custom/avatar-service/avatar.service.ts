@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import * as _ from 'lodash';
 
 @Injectable({
@@ -7,7 +7,6 @@ import * as _ from 'lodash';
 export class AvatarService {
 
   fnGetTextAvatar(userObj) {
-    console.log("userObj", userObj)
     let initials = '';
     let tempArr = [];
 
@@ -16,7 +15,7 @@ export class AvatarService {
       if (tempArr.length > 1) {
         initials = tempArr[0].charAt(0).toUpperCase() + tempArr[1].charAt(0).toUpperCase();
       } else {
-        initials = tempArr[0].charAt(0).toUpperCase()
+        initials = tempArr[0].charAt(0).toUpperCase();
       }
     } else if (userObj.username) {
       tempArr = _.cloneDeep(userObj.username).split(' ');
@@ -36,7 +35,7 @@ export class AvatarService {
       tempArr = _.cloneDeep(userObj.email).split('@');
       initials = tempArr[0].charAt(0).toUpperCase() + tempArr[1].charAt(0).toUpperCase();
     }
-    return initials
+    return initials;
 
   }
 
@@ -54,7 +53,7 @@ export class AvatarService {
       .toString(16)
       .toUpperCase();
 
-    return "00000".substring(0, 6 - c.length) + c;
+    return '00000'.substring(0, 6 - c.length) + c;
   }
 
   getInitials(userObj) {
@@ -75,25 +74,25 @@ export class AvatarService {
       userObj.isLight = true;
     }
     // Create a rectangular canvas which will become th image.
-    const canvas = document.createElement("canvas");
-    const context = canvas.getContext("2d");
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
     canvas.width = 100;
     canvas.height = 100;
     // Draw the circle in the background using the randomColor.
     context.fillStyle = randomColor;
     context.fillRect(0, 0, canvas.width, canvas.height);
-    context.font = (canvas.height / 3) + "px serif";
+    context.font = (canvas.height / 3) + 'px serif';
     // Make the text's center overlap the image's center.
-    context.textAlign = "center";
+    context.textAlign = 'center';
     context.font = '36pt "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif';
     if (context.measureText(this.fnGetTextAvatar(userObj)).width > canvas.width - 15) {
       context.font = '30pt "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif';
     }
-    context.fillStyle = userObj.isLight ? "#000000" : "#ffffff";
+    context.fillStyle = userObj.isLight ? '#000000' : '#ffffff';
     context.fillText(this.fnGetTextAvatar(userObj), canvas.width / 2, canvas.height / 1.5);
 
     // Show the image to the world.
-    return canvas.toDataURL(); //return base64 image string
+    return canvas.toDataURL(); // return base64 image string
   };
 
 
