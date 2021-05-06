@@ -30,7 +30,7 @@
     "angular-svg-icon": "^10.0.0",
     "bootstrap": "^4.5.0",
     "font-awesome": "^4.7.0",
-    "highcharts": "^7.1.2",
+    "highcharts": "^9.0.0",
     "leaflet": "^1.6.0",
     "leaflet.markercluster": "^1.4.1",
     "moment": "^2.27.0",
